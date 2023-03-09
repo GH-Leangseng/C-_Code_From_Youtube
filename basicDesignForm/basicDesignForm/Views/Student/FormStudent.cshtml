@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewData["Title"] = "FormStudent";
+}
+
+
+<div class="container">
+    <h2 class="h2">Form The student </h2>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            IDCard:
+            <input type="password" class="form-control" id="idCard" />
+            Name:
+            <input type="text" class="form-control" id="idName" />
+            Gender
+            <select class="form-control" id="idGender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Other</option>
+            </select>
+            Address:
+            <textarea class="form-control" id="idAddress" rows="4">
+    
+            </textarea>
+        </div>
+        <div class="col-sm-6">
+            Phone:
+            <input type="text" class="form-control" id="idPhone" />
+            DOB:
+            <input type="date" class="form-control" id="iddate" />
+
+
+        </div>
+    </div>
+
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Level</th>
+                        <th>Price</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Laravel</td>
+                        <td>100</td>
+                        <td>11:00PM -> 12:00 </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>C#</td>
+                        <td>100</td>
+                        <td>11:00PM -> 12:00 </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-outline-primary w-100 mt-2" id="save">Save</button>
+        </div>
+    </div> 
+
+
+
+
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //$("#save").click(function () {
+        //    //$('#idPhone').val("015844712");
+        //    //$('#idName').val("015844712");
+        //    //$('#idpw').val("015844712");
+        //    //var textH2 = $("h2").text();
+        //    //alert(textH2);
+
+
+        //})
+
+        //$('#iddate').on('change', function () {
+        //    var a = $(this).val();
+        //    $("h2").text(a);
+        // })
+
+        //$("#idGender").change(function () {
+        //    /*var text = $(this).val();*/
+        //    /*$("h2").text(text);*/
+        //    alert($(this).val() + " - " + $("#idGender option:selected").text());
+
+        //})
+
+        $("#save").click(function () {
+            var objStudent = {};
+            var ListStudent = [];
+
+
+
+            objStudent.IDCard = $("#idCard").val();
+            objStudent.Name = $("#idName").val();
+            objStudent.Gender = $("#idGender").val();
+            objStudent.Address = $("#idAddress").val();
+            objStudent.Phone = $("#idPhone").val();
+            objStudent.DOB = $("#iddate").val();
+            objStudent.Name = $("#idName").val();
+
+            var ObjLevel = {};
+            var ListLevel = [];
+
+            ObjLevel.LevelName = "C#";
+            ObjLevel.Price = 45.15;
+            ObjLevel.Time = "11:00PM -> 12:15PM";
+            ListLevel.push(ObjLevel);
+
+            ObjLevel.LevelName = "Laravel";
+            ObjLevel.Price = 42.00;
+            ObjLevel.Time = "10:00PM -> 12:15PM";
+            ListLevel.push(ObjLevel);
+            objStudent.levels = ListLevel;
+
+           
+            
+            //console.log(objStudent);
+            ListStudent.push(objStudent); //thiss add object to array
+
+
+            //using ajax for send data to controller
+            //ajax data by object
+            $.ajax({
+                url: '@Url.Action("PostStudent", "Student")', //send data to controller
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    obj: objStudent
+                },
+                success: function(obj){
+                    //$("#idAddress").val(data.address);
+                    //alert(data.ErrorMsg + '-' + data.ErrorCode);
+                    console.log(obj);
+                    alert("Insert Success => " + obj.errorCode + "--" + obj.errorMsg);
+                }
+
+            })
+
+
+            //ajax data by array
+             @*$.ajax({
+                url: '@Url.Action("PostStudent", "Student")', //send data to controller
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    obj: ListStudent
+                },
+                success: function (data) {
+                    //$("#idAddress").val(data.address);
+                }*@
+
+            //})
+        })
+    });
+
+
+</script>

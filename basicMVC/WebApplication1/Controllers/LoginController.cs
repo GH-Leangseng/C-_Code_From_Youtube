@@ -52,5 +52,13 @@ namespace WebApplication1.Controllers
 
             return View(M); //send list to view for display 
         }
+
+
+        public IActionResult view1()
+        {
+            return View();
+        }
     }
+
+
 }
