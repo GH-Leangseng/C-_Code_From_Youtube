@@ -1,0 +1,19 @@
+﻿@model List<web_MVC_basic.Models.Department>
+@using web_MVC_basic.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@Model;*@
+
+<div>
+    <h2>DepartMent List</h2>
+    <ul>
+        @foreach(Department dep in Model)
+            {
+                <li>@Html.ActionLink(dep.Name, "Index","Employee",new {departmentId = dep.ID} , null)</li>
+            }
+    </ul>
+    
+</div>
+

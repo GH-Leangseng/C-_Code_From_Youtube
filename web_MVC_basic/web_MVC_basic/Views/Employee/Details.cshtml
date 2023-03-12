@@ -1,0 +1,15 @@
+﻿@model web_MVC_basic.Models.Employee
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@Model;*@
+<h1>Employee </h1>
+<h3>ID : @Model.EmployeeID</h3>
+<h3>Name : @Model.Name</h3>
+<h3>City : @Model.City</h3>
+<h3>Gender : @Model.Gender</h3>
+
+@Html.ActionLink("goback to view LIst", "Index", "Employee",new { departmentId = Model.departmentId },null);
+
