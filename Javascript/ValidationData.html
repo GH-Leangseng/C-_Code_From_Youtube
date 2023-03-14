@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<style>
+        label.error{
+                color:red;
+                /* display: block; */
+        }
+</style>
+<body>
+        <div class="input_container">
+                <form action="valid.html" id="formValidation" name="formValidation">
+                        <div class="input-row">
+                                <input type="text" name="name" placeholder="Name*" required>
+                        </div>
+                        <div class="input-row">
+                                <input type="email" name="email" placeholder="Email*" required>
+                        </div>
+                        <div class="input-row">
+                                <input type="text" name="phone" placeholder="Phone*" required>
+                        </div>
+                        <div class="input-row">
+                                <input type="text" name="subject" placeholder="Subject*" required>
+                        </div>
+                        <div class="input-row">
+                                <textarea name="formMessage" id="formMessage" required></textarea>
+                        </div>
+                        <div class="input-row">
+                                <input type="submit" value="Submit Data"/>
+                        </div>
+                        
+                </form>
+        </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script>
+        $("#formValidation").validate({
+        rules:{
+                name:{ 
+                        minlength:2
+                },
+                email:{
+                        email:true
+                },
+                phone:{
+                        number:true,
+                        minlength:10,
+                        maxlength:10
+                }
+        },
+        messages: {
+                name:{
+                        required:"Required input name",
+                        minlength: "name at least 2 charater"
+                },
+                email:"please input your email",
+                phone:"please input your phone",
+                subject:"please input your subject",
+                formMessage:"please input your Message",
+
+
+        },
+        submitHandler: function(form) {
+          form.submit();
+        }
+});
+</script>
+</html>

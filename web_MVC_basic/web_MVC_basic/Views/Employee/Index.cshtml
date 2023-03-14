@@ -1,0 +1,22 @@
+﻿@model IEnumerable<web_MVC_basic.Models.Employee>
+@{
+    ViewBag.Title = "EmployeeList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/View/Employee/style.css" rel="stylesheet" />
+@using web_MVC_basic.Models;
+@*@Model;*@
+<div style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+    <h2>Index</h2>
+    <ul>
+        @foreach (Employee employee in Model)
+        {
+            <li>@Html.ActionLink(employee.Name, "Details", new { id = employee.EmployeeID })</li>
+        }
+    </ul>
+
+
+</div>
+@Html.ActionLink("goback to view LIst", "Index", "Department");
+
+

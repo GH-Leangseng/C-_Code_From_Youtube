@@ -1,0 +1,11 @@
+E:\C#\SwitchForm\SwitchForm\bin\Debug\SwitchForm.exe.config
+E:\C#\SwitchForm\SwitchForm\bin\Debug\SwitchForm.exe
+E:\C#\SwitchForm\SwitchForm\bin\Debug\SwitchForm.pdb
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.csproj.AssemblyReference.cache
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.Form1.resources
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.Form2.resources
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.Properties.Resources.resources
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.csproj.GenerateResource.cache
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.csproj.CoreCompileInputs.cache
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.exe
+E:\C#\SwitchForm\SwitchForm\obj\Debug\SwitchForm.pdb

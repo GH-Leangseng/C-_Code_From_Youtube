@@ -1,0 +1,18 @@
+﻿body {
+
+}
+li {
+    color: red;
+    padding: 5px 0px;
+    text-decoration: underline;
+    /*background-color: black;*/
+    margin: 2px;
+    list-style-type: none;
+    /*transition:1s;*/
+}
+    
+li:hover {
+        /*padding-left: 20px;*/
+        cursor:pointer;
+        color:white;
+  }
